@@ -1,0 +1,8 @@
+{
+  "extends": ["taro/react"],
+  "rules": {
+    //引号
+    "quotes": [1, "double"],
+    "jsx-quotes": [1, "prefer-double"]
+  }
+}

@@ -68,4 +68,4 @@ export const quesList = [
       level: 0,
     },
     { title: "还是更注重情感和个人价值观,", level: 0 },
-  ];
+  ].map((el,i) =>({...el,index:i}));

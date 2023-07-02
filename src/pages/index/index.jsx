@@ -11,7 +11,8 @@ export default function Index() {
   });
   const [list, setList] = useState(quesList);
   function submit() {
-    if (list.some((el) => el.level === 0)) {
+    const tempList = Taro.getStorageSync("list");
+    if (tempList.some((el) => el === 0)) {
       Taro.showToast({
         icon: "error",
         title: "请完成所有题目",
@@ -37,7 +38,9 @@ export default function Index() {
         </View>
         <View className="list">
           {list.map((el, i) => {
-            return <ListItem key={i} {...el} setList={setList}></ListItem>;
+            return (
+              <ListItem key={i + el.level} {...el} setList={setList}></ListItem>
+            );
           })}
         </View>
         <View
